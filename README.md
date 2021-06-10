@@ -40,7 +40,7 @@
 5. Add an appsettings.json file to the CretaceousPark.Solution/CretaceousPark directory and add the following:
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=pierres_treats;uid=root;pwd=YourPassword;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=cretaceous_park;uid=root;pwd=YourPassword;"
   }
 }
 

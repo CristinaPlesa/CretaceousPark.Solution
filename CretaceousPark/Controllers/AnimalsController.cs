@@ -20,28 +20,28 @@ namespace CretaceousPark.Controllers
       _db = db;
     }
 
-    // GET api/animals
+    // GET: api/Animals
     [HttpGet]
-    public ActionResult<IEnumerable<Animal>> Get(string species, string gender, string name)
+    public async Task<ActionResult<IEnumerable<Animal>>> Get(string species, string gender, string name)
     {
-        var query = _db.Animals.AsQueryable();
+      var query = _db.Animals.AsQueryable();
 
-        if (species != null)
-        {
+      if (species != null)
+      {
         query = query.Where(entry => entry.Species == species);
-        }
+      }
 
-        if (gender != null)
-        {
+      if (gender != null)
+      {
         query = query.Where(entry => entry.Gender == gender);
-        }
+      }    
 
-        if (name != null)
-        {
+      if (name != null)
+      {
         query = query.Where(entry => entry.Name == name);
-        }
+      }      
 
-        return query.ToList();
+      return await query.ToListAsync();
     }
 
     // GET: api/Animals/5
